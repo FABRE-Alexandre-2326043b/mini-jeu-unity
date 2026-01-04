@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickable : MonoBehaviour
+public class OnTriggerPick : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,9 +16,12 @@ public class Pickable : MonoBehaviour
         
     }
 
-    public void pickUp()
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(name + " est récupéré");
-        Destroy(gameObject);
+        Pickable pickable = other.GetComponent<Pickable>();
+        if (pickable != null)
+        {
+            pickable.pickUp();
+        }
     }
 }
