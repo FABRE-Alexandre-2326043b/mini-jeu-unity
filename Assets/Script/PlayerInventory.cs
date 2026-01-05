@@ -1,18 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro; 
 public class PlayerInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI keysText;
+    private int coins = 0;
+    private int keys = 0;
+
     void Start()
     {
-        
+        UpdateCoinsText();
+        UpdateKeysText();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void AddCoin(int amount)
     {
-        
+        coins += amount;
+        UpdateCoinsText();
+    }
+
+    public void AddKey(int amount)
+    {
+        keys += amount;
+        UpdateKeysText();
+    }
+
+    public bool HasKey()
+    {
+        { return keys > 0; }
+    }  
+
+    public bool UseKey()
+    {
+        if (keys > 0)
+        {
+            keys--;
+            UpdateKeysText();
+            return true;
+        }
+        return false;
+    }
+
+    void UpdateCoinsText()
+    {
+        coinsText.text = "Pièces : " + coins;
+    }
+
+    void UpdateKeysText()
+    {
+        keysText.text = "Clés : " + keys;
     }
 }

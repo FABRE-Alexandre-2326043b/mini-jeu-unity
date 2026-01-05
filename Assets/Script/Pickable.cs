@@ -19,6 +19,10 @@ public class Pickable : MonoBehaviour
     public void pickUp()
     {
         Debug.Log(name + " est récupéré");
+        if (name.Contains("Coin"))
+            FindObjectOfType<PlayerInventory>().AddCoin(1);
+        if (name.Contains("Key"))
+            FindObjectOfType<PlayerInventory>().AddKey(1);
         Destroy(gameObject);
     }
 }
