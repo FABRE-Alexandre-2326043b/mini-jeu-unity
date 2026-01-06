@@ -10,12 +10,6 @@ public class ChestInteraction : MonoBehaviour
         {
             PlayerInventory inventory = other.GetComponent<PlayerInventory>();
 
-            if (inventory == null)
-            {
-                Debug.LogError("ERREUR : Je ne trouve pas le script 'PlayerInventory' sur " + other.name);
-                return;
-            }
-
             if (inventory != null && inventory.HasKey() == true)
             {
                 OpenChest();
@@ -33,8 +27,6 @@ public class ChestInteraction : MonoBehaviour
         isOpen = true;
         Debug.Log("Le coffre s'ouvre !");
 
-        // GetComponent<Animator>().SetTrigger("Open");
-
-        var renderer = GetComponentInChildren<Renderer>().material.color = Color.green;
+        GetComponent<Animator>().SetTrigger("Open");
     }
 }
