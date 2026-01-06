@@ -1,18 +1,47 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject winPanel;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            WinGame();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void WinGame()
     {
-        
+        Debug.Log("Gagné !");
+
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+        }
+
+        Time.timeScale = 0f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Fermeture du jeu...");
+        Application.Quit();
+
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
