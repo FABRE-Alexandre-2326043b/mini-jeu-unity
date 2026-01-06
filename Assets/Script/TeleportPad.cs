@@ -2,12 +2,27 @@ using UnityEngine;
 
 public class TeleportPad : MonoBehaviour
 {
-    public Transform destination; 
+    public Transform destination;
 
+    [Header("Effets Spéciaux")] 
+    public GameObject particlePrefab;
+    public AudioSource sourceAudio;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            if (sourceAudio != null)
+            {
+                sourceAudio.Play();
+            }
+
+            if (particlePrefab != null)
+            {
+                GameObject particles = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+                Destroy(particles, 2f);
+            }
+
             Debug.Log("Téléportation !");
 
             CharacterController cc = other.GetComponent<CharacterController>();

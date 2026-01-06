@@ -3,7 +3,10 @@ guid: ab380ec0a5ea1a74382ae2d72e1d643e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - destination: {instanceID: 0}
+  - particlePrefab: {fileID: 6025062688303754082, guid: 54b179ef397ff5148ae406d1e77b2e67, type: 3}
+  - sourceAudio: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
