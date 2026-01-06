@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public GameObject winPanel;
+    public GameObject losePanel;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,18 @@ public class MenuManager : MonoBehaviour
 
         Time.timeScale = 0f;
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void LoseGame()
+    {
+        Debug.Log("Perdu !");
+        if (losePanel != null)
+        {
+            losePanel.SetActive(true);
+        }
+        Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
