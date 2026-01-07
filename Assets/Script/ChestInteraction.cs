@@ -6,13 +6,16 @@ public class ChestInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Le coffre a été touché par : " + other.name);
         if (other.CompareTag("Player") && !isOpen)
         {
             PlayerInventory inventory = other.GetComponent<PlayerInventory>();
+            PlayerAttack playerAttack = other.GetComponent<PlayerAttack>();
 
             if (inventory != null && inventory.HasKey() == true)
             {
                 OpenChest();
+                playerAttack.UnlockAbility();
                 inventory.UseKey();
             }
             else
