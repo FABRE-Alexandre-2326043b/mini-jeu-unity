@@ -256,6 +256,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111457683}
   m_CullTransparentMesh: 1
+--- !u!1 &114894088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114894089}
+  m_Layer: 6
+  m_Name: firePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &114894089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114894088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0.08, z: 0.68}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 864119197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &115181915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1899,7 @@ GameObject:
   - component: {fileID: 864119202}
   - component: {fileID: 864119203}
   - component: {fileID: 864119204}
+  - component: {fileID: 864119205}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1937,7 +1969,8 @@ Transform:
   m_LocalPosition: {x: -4.689, y: 0.859, z: 3.973}
   m_LocalScale: {x: 0.311, y: 0.30270693, z: 0.32057238}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 114894089}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &864119198
@@ -2107,6 +2140,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinsText: {fileID: 1434716434}
   keysText: {fileID: 1927977295}
+--- !u!114 &864119205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864119193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556134c606c659844a0e07d7112b5f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8508734788372058318, guid: 79fa74780d7d13841a3e86dba0b5e517, type: 3}
+  firePoint: {fileID: 114894089}
 --- !u!1 &893920457
 GameObject:
   m_ObjectHideFlags: 0
