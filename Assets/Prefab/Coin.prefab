@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3124117810375859839}
   - component: {fileID: 8078416674467785278}
   - component: {fileID: 8562167360818682394}
-  - component: {fileID: 2552947305388098821}
   - component: {fileID: 3755833273696706600}
+  - component: {fileID: 7538505407048729671}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70687556, w: 0.7073379}
   m_LocalPosition: {x: -2.735, y: 0.717, z: 4.034}
-  m_LocalScale: {x: 0.27046484, y: 0.04260744, z: 0.4236}
+  m_LocalScale: {x: 0.32, y: 0.32, z: 0.64}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6593556057181054521}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -3579005124961438040, guid: 68b5e511d1ebd544695995353526796f, type: 3}
 --- !u!23 &8562167360818682394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85,8 +85,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2552947305388098821
-CapsuleCollider:
+--- !u!114 &3755833273696706600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593556057181054521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53fad67cf7ff805498c92d82d13f7bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Speed: {x: 0, y: 0, z: 0}
+--- !u!65 &7538505407048729671
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -100,23 +113,9 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3755833273696706600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6593556057181054521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53fad67cf7ff805498c92d82d13f7bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 3
+  m_Size: {x: 0.8204078, y: 0.6946702, z: 0.031318843}
+  m_Center: {x: 0, y: 0, z: 0}
