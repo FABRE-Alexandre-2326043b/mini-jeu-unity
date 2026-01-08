@@ -42,13 +42,7 @@ public class PlayerInventory : MonoBehaviour
         return false;
     }
 
-    void UpdateCoinsText()
-    {
-        coinsText.text = "Pièces : " + coins;
-    }
+    void UpdateCoinsText() => coinsText.text = coins.ToString();
 
-    void UpdateKeysText()
-    {
-        keysText.text = "Clés : " + keys;
-    }
+    void UpdateKeysText() => keysText.text = keys.ToString();
 }
