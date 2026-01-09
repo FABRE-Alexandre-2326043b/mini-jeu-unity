@@ -6,6 +6,7 @@ namespace BUT
     /* Handle Camera's rotation */
     public class CameraMovementOrbital : MonoBehaviour
     {
+        public Transform playerTransform;
         [SerializeField]
         float m_SpeedRotation;
         public float SpeedRotation => Mathf.Deg2Rad * m_SpeedRotation * Time.deltaTime;
@@ -19,6 +20,14 @@ namespace BUT
         {
             // init rotation
             m_CurrentRotation = transform.rotation.eulerAngles;
+        }
+
+        void LateUpdate()
+        {
+            if (playerTransform != null)
+            {
+                transform.position = playerTransform.position;
+            }
         }
 
         // rotate when input received

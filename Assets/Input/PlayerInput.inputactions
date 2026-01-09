@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "Look",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "61cd90f7-05f3-4b8a-be12-d49c477607d4",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -93,8 +93,8 @@
                 },
                 {
                     "name": "",
-                    "id": "5f7fc5dc-d57f-47b1-a48c-e7dd88e5f142",
-                    "path": "Delta[Mouse]",
+                    "id": "ceb84bff-90df-42c4-b2d2-c180394276dc",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

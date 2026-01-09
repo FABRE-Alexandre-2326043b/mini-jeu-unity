@@ -19,5 +19,12 @@ public class Killable : MonoBehaviour
     public void kill() 
     {
         Debug.Log(name + " est mort");
+
+        MenuManager manager = FindObjectOfType<MenuManager>();
+
+        if (manager != null && name == "Player")
+        {
+            manager.FinishGame(false);
+        }
     }
 }
