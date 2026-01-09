@@ -13,7 +13,7 @@ public class EnemyDamage : MonoBehaviour
 
             if (manager != null)
             {
-                manager.LoseGame();
+                manager.FinishGame(false);
             }
         }
     }

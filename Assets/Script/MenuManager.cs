@@ -5,46 +5,59 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject losePanel;
+    public GameObject startPanel;
+    public static bool isRestarting = false;
+
+    private void Start()
+    {
+        if (isRestarting == true)
+        {
+            StartGame(); 
+            isRestarting = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            WinGame();
+            FinishGame(true);
         }
     }
 
-    void WinGame()
+    public void FinishGame(bool win)
     {
-        Debug.Log("Gagné !");
-
-        if (winPanel != null)
+        if (win)
         {
+            Debug.Log("Gagné !");
             winPanel.SetActive(true);
-        }
-
-        Time.timeScale = 0f;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    public void LoseGame()
-    {
-        Debug.Log("Perdu !");
-        if (losePanel != null)
+        }else
         {
+            Debug.Log("Perdu !");
             losePanel.SetActive(true);
         }
+
+        FindObjectOfType<PlayerInventory>().ShowInventory();
+
         Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+    }
+
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        startPanel.SetActive(false);
+        FindObjectOfType<PlayerInventory>().ShowInventory();
     }
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f;
+        isRestarting = true;
 
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -56,5 +69,11 @@ public class MenuManager : MonoBehaviour
         #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    public void ReturnToMainMenu()
+    {
+        isRestarting = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

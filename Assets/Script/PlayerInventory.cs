@@ -1,9 +1,12 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
+using UnityEngine.UI;
 public class PlayerInventory : MonoBehaviour
 {
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI keysText;
+    public Image coinIcon;
+    public Image keyIcon;
     private int coins = 0;
     private int keys = 0;
 
@@ -45,4 +48,20 @@ public class PlayerInventory : MonoBehaviour
     void UpdateCoinsText() => coinsText.text = coins.ToString();
 
     void UpdateKeysText() => keysText.text = keys.ToString();
+
+    public void HideInventory()
+    {
+        coinsText.gameObject.SetActive(false);
+        keysText.gameObject.SetActive(false);
+        coinIcon.gameObject.SetActive(false);
+        keyIcon.gameObject.SetActive(false);
+    }
+
+    public void ShowInventory()
+    {
+        coinsText.gameObject.SetActive(true);
+        keysText.gameObject.SetActive(true);
+        coinIcon.gameObject.SetActive(true);
+        keyIcon.gameObject.SetActive(true);
+    }
 }

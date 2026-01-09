@@ -24,7 +24,7 @@ public class Killable : MonoBehaviour
 
         if (manager != null && name == "Player")
         {
-            manager.LoseGame();
+            manager.FinishGame(false);
         }
     }
 }
